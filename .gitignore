@@ -1,0 +1,7 @@
+.gradle
+build
+deploy.zip
+*.iml
+*.ipr
+*.iws
+out
