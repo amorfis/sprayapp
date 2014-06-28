@@ -17,9 +17,15 @@ dependencies {
     compile "io.spray:spray-routing:${sprayVersion}"
     compile "io.spray:spray-testkit:${sprayVersion}"
     compile "com.typesafe.akka:akka-actor_2.10:${akkaVersion}"
-//    compile "com.typesafe.akka:akka-testkit_2.10:${akkaVersion}:test"
-//    compile "org.specs2:specs2:2.2.3:test"
+}
+
+task cb(type: Zip, dependsOn: "jar") {
+    def toZip = configurations.runtime + jar.getOutputs().files
+
+    from toZip
+
+    println((toZip.collect({it.name}) as List).join(":"))
 }
 
 mainClassName = "pl.devcrowd.app.Boot"
-applicationDefaultJvmArgs = ["-Dport=9999"]
+applicationDefaultJvmArgs=["-Dapp.port=8080"]
