@@ -24,8 +24,9 @@ task cb(type: Zip, dependsOn: "jar") {
 
     from toZip
 
+    println("For CloudBees:")
     println((toZip.collect({it.name}) as List).join(":"))
 }
 
-mainClassName = "pl.devcrowd.app.Boot"
+mainClassName = "pl.szjug.sprayapp.Boot"
 applicationDefaultJvmArgs=["-Dapp.port=8080"]

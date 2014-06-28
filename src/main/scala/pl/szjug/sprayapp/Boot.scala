@@ -1,9 +1,8 @@
-package pl.devcrowd.app
+package pl.szjug.sprayapp
 
-import spray.can.Http
+import akka.actor.{Props, ActorSystem}
 import akka.io.IO
-import akka.actor.{ActorSystem, Props}
-import spray.routing.{SimpleRoutingApp}
+import spray.can.Http
 
 object Boot extends App {
 
