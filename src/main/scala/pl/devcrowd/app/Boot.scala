@@ -13,10 +13,14 @@ object Boot extends App {
   // create and start our service actor
   val service = system.actorOf(Props[Service], "demo-service")
 
+  val port = System.getProperty("app.port")
+
+  println(s"Starting spray can on $port")
+
   // start a new HTTP server on port 8080 with our service actor as the handler
   IO(Http) ! Http.Bind(
     service,
-    interface = "localhost",
-    port = System.getProperty("port").toInt)
+    interface = "0.0.0.0",
+    port = port.toInt)
 
 }
