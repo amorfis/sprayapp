@@ -19,6 +19,8 @@ dependencies {
     compile "com.typesafe.akka:akka-actor_2.10:${akkaVersion}"
 }
 
+jar.archiveName = "szjug-sprayapp-${version}.jar"
+
 task cb(type: Zip, dependsOn: "jar") {
     def toZip = configurations.runtime + jar.getOutputs().files
 
@@ -28,6 +30,5 @@ task cb(type: Zip, dependsOn: "jar") {
     println((toZip.collect({it.name}) as List).join(":"))
 }
 
-jar.archiveName = "szjug-sprayapp-${version}.jar"
 mainClassName = "pl.szjug.sprayapp.Boot"
 applicationDefaultJvmArgs = ["-Dapp.port=8080"]
