@@ -28,5 +28,6 @@ task cb(type: Zip, dependsOn: "jar") {
     println((toZip.collect({it.name}) as List).join(":"))
 }
 
+jar.archiveName = "szjug-sprayapp-${version}.jar"
 mainClassName = "pl.szjug.sprayapp.Boot"
-applicationDefaultJvmArgs=["-Dapp.port=8080"]
+applicationDefaultJvmArgs = ["-Dapp.port=8080"]
