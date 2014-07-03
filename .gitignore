@@ -4,4 +4,5 @@ deploy.zip
 *.iml
 *.ipr
 *.iws
+.idea
 out
