@@ -2,7 +2,7 @@ apply plugin: 'scala'
 apply plugin: 'idea'
 apply plugin: 'application'
 
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 version = '1.0'
 
 repositories {
@@ -17,6 +17,7 @@ dependencies {
     compile "io.spray:spray-routing:${sprayVersion}"
     compile "io.spray:spray-testkit:${sprayVersion}"
     compile "com.typesafe.akka:akka-actor_2.10:${akkaVersion}"
+    testCompile "org.specs2:specs2_2.10:2.3.12"
 }
 
 jar.archiveName = "szjug-sprayapp-${version}.jar"
