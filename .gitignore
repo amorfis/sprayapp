@@ -6,3 +6,7 @@ deploy.zip
 *.iws
 .idea
 out
+
+.floo
+.flooignore
+target
