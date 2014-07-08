@@ -3,7 +3,10 @@ package pl.szjug.sprayapp
 import org.specs2.mutable.Specification
 import spray.testkit.Specs2RouteTest
 import spray.http.StatusCodes._
+import org.junit.runner.RunWith
+import org.specs2.runner.JUnitRunner
 
+@RunWith(classOf[JUnitRunner])
 class TestSpray extends Specification with MyService with Specs2RouteTest {
   def actorRefFactory = system // connect the DSL to the test ActorSystem
 
