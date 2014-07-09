@@ -25,9 +25,12 @@ trait MyService extends HttpService {
       get {
         respondWithMediaType(`text/html`) { // XML is marshalled to `text/xml` by default, so we simply override here
           complete {
+            val jVersion = System.getProperty("java.version")
+
             <html>
               <body>
                 <h1>Say hello to <i>spray-routing</i> on <i>spray-can</i>!</h1>
+                <p>We are running Java {jVersion}</p>
               </body>
             </html>
           }
