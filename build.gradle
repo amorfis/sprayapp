@@ -22,7 +22,7 @@ dependencies {
 
 jar.archiveName = "szjug-sprayapp-${version}.jar"
 
-task cb(type: Zip, dependsOn: "jar") {
+task cb(type: Zip, dependsOn: ["jar", "test"]) {
     def toZip = configurations.runtime + jar.getOutputs().files
 
     from toZip
